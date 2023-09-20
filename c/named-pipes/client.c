@@ -19,7 +19,7 @@ void run() {
         printf("Client: Received %s\n", buf);
         write(fd, pong, sizeof(pong));
         printf("Client: Sent pong\n");
-        usleep(100000);
+        usleep(180000);
         read_bytes = read(fd, buf, sizeof(buf));
         buf[read_bytes] = '\0';
     }
@@ -28,6 +28,5 @@ void run() {
     
 
 int main() {
-    sleep(2);
     run();
 }

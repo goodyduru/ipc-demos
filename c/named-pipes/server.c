@@ -18,7 +18,7 @@ void run() {
     while ( i != ROUNDS ) {
         printf("Server: Sent ping\n");
         write(fd, ping, sizeof(ping));
-        usleep(100000);
+        usleep(200000);
         read_bytes = read(fd, buf, sizeof(buf));
         buf[read_bytes] = '\0';
         printf("Server: Received %s\n", buf);
@@ -31,6 +31,5 @@ void run() {
     
 
 int main() {
-    sleep(1);
     run();
 }

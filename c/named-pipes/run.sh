@@ -1,0 +1,1 @@
+./server.bin & ./client.bin
