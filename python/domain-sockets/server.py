@@ -4,7 +4,7 @@ import socket
 
 def run():
     server_path = './udsocket'
-    # Delete if the path does not exist
+    # Delete if the path does exist
     try:
         os.unlink(server_path)
     except OSError:
