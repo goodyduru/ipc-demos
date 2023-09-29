@@ -11,18 +11,18 @@ int main(void) {
     int sock, client, len;
     char pong[] = "pong";
     struct sockaddr_un client_addr, local_addr = {
-        .sun_family = AF_UNIX
+        .sun_family = PF_LOCAL
     };
     char data[16];
 
-    if ( (sock = socket(AF_UNIX, SOCK_STREAM, 0)) == -1 ) {
+    if ( (sock = socket(PF_LOCAL, SOCK_STREAM, 0)) == -1 ) {
         perror("socket");
         exit(1);
     }
 
     strcpy(local_addr.sun_path, SERVER_PATH);
     unlink(local_addr.sun_path);
-    len = strlen(local_addr.sun_path) + sizeof(local_addr.sun_family) + 1; // Add one to account for null byte in sun_path
+    len = strlen(local_addr.sun_path) + sizeof(local_addr.sun_family) + 1; // Add 1 to account for null byte in sun_path
     if ( bind(sock, (struct sockaddr *)&local_addr, len) == -1 ) {
         perror("bind");
         exit(1);
@@ -33,6 +33,7 @@ int main(void) {
         exit(1);
     } 
 
+    // Loop for ever, it's a server duh.
     while(1) {
         socklen_t slen = sizeof(client_addr);
         int n;
