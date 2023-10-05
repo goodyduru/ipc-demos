@@ -12,7 +12,6 @@ def print_pong(signum, frame):
 
 def run():
     signal.signal(signal.SIGUSR1, print_pong)
-    signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGUSR2})
     while i < ROUNDS:
         os.kill(0, signal.SIGUSR2)
     os.kill(0, signal.SIGQUIT)

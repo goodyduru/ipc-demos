@@ -24,13 +24,9 @@ void run() {
         .sa_flags = SA_RESTART,
     };
 
-
     if ( sigaction(SIGUSR2, &sa, NULL) == -1  || sigaction(SIGQUIT, &sa, NULL) == -1 ) {
         exit(1);
     }
-
-    sigaddset(&(sa.sa_mask), SIGUSR1);
-    sigprocmask(SIG_BLOCK, &(sa.sa_mask), NULL);
 
     while ( !is_ended );
 }

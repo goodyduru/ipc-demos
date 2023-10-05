@@ -16,7 +16,6 @@ def print_ping(signum, frame):
 def run():
     signal.signal(signal.SIGUSR2, handler=print_ping)
     signal.signal(signal.SIGQUIT, end)
-    signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGUSR1})
 
     while not should_end:
         pass

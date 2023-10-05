@@ -23,9 +23,6 @@ void run() {
         exit(1);
     } 
 
-    sigaddset(&(sa.sa_mask), SIGUSR2);
-    sigprocmask(SIG_BLOCK, &(sa.sa_mask), NULL);
-
     while ( i < ROUNDS ) {
         kill(0, SIGUSR2);
     }
