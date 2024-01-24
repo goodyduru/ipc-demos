@@ -21,7 +21,7 @@ void run() {
     }
 
     if ( (id = shmget(key, 20, 0600 | IPC_CREAT)) == -1 ) {
-        perror("msgget");
+        perror("shmget");
         exit(1);
     }
 
@@ -43,6 +43,7 @@ void run() {
         perror("shmctl");
         exit(1);
     }
+    shmdt(addr);
     unlink(path);
 }
 

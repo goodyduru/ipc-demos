@@ -21,7 +21,7 @@ void run() {
     }
 
     if ( (id = shmget(key, 20, 0600 | IPC_CREAT)) == -1 ) {
-        perror("msgget");
+        perror("shmget");
         exit(1);
     }
 
@@ -37,6 +37,7 @@ void run() {
     }
     *addr = type;
     memcpy(addr+1, "end\0", 4);
+    shmdt(addr);
 }
 
 int main() {

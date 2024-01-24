@@ -25,6 +25,7 @@ def run():
         print(f"Client: Received {data}")
         i += 1
     mem.write(b"end")
+    mem.detach()
 
 
 if __name__ == "__main__":

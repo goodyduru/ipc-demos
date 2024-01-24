@@ -24,8 +24,9 @@ def run():
             time.sleep(1e-6)
             data = mem.read(4)
         data = data.decode()
-    os.unlink(path)
     mem.remove()
+    mem.detach()
+    os.unlink(path)
 
 
 if __name__ == "__main__":
