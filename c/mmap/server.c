@@ -15,7 +15,7 @@ void run() {
     int fd = open(path, O_RDWR|O_CREAT, 0600);
 
     lseek(fd, FILE_SIZE, SEEK_SET);
-    write(fd, "", 1);
+    write(fd, " ", 1);
     lseek(fd, 0, SEEK_SET);
     
 
