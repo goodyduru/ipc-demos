@@ -32,6 +32,7 @@ def run():
         data = data.decode()
         mem.seek(0)
     mem.close()
+    os.close(fd)
     os.unlink(path)
 
 

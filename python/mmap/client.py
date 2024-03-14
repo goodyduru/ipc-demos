@@ -30,6 +30,7 @@ def run():
         i += 1
     mem.write(b"end")
     mem.close()
+    os.close(fd)
 
 
 if __name__ == "__main__":

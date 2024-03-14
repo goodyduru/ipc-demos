@@ -34,6 +34,7 @@ void run() {
     }
 
     munmap(addr, FILE_SIZE);
+    close(fd);
     unlink(path);
 }
 

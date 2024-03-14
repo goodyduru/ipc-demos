@@ -31,6 +31,7 @@ void run() {
     *addr = type;
     memcpy(addr+1, "end\0", 4);
     munmap(addr, FILE_SIZE);
+    close(fd);
 }
 
 int main() {
