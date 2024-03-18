@@ -7,4 +7,4 @@ The different IPC mechanisms are:
 * Unix Signals: [Article](https://goodyduru.github.io/os/2023/10/05/ipc-unix-signals.html), code in [C](https://github.com/goodyduru/ipc-demos/tree/main/c/signals) and [Python](https://github.com/goodyduru/ipc-demos/tree/main/python/signals).
 * Message Queues: [Article](https://goodyduru.github.io/os/2023/11/13/ipc-message-queues.html), code in [C](https://github.com/goodyduru/ipc-demos/tree/main/c/message-queue) and [Python](https://github.com/goodyduru/ipc-demos/tree/main/python/message-queue).
 * Shared Memory: [Article](https://goodyduru.github.io/os/2024/01/31/ipc-shared-memory.html), code in [C](https://github.com/goodyduru/ipc-demos/tree/main/c/shared-memory) and [Python](https://github.com/goodyduru/ipc-demos/tree/main/python/shared-memory).
-* Memory-Mapped Files: TBD
+* Memory-Mapped Files: [Article](https://goodyduru.github.io/os/2024/03/18/ipc-mmap.html), code in [C](https://github.com/goodyduru/ipc-demos/tree/main/c/mmap) and [Python](https://github.com/goodyduru/ipc-demos/tree/main/python/mmap).
